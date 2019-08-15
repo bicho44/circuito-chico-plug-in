@@ -37,10 +37,13 @@ Flow: Demo Workflow
   
   piklist('field', array(
     'type' => 'file'
-    ,'field' => 'img_galeria_id' // Use this field to match WordPress featured image field name.
+    ,'field' => 'img_galeria_id'
     ,'scope' => 'post_meta'
     ,'options' => array(
       'title' => __('Galer&iacute; de Im&aacute;genes', 'imgd')
-      ,'button' => __('Guarda images de la galeria', 'imgd')
+      ,'button' => __('Im&aacute;genes para la Galer&iacute;a', 'imgd')
+    )
+    ,'attributes' => array(
+      'class' => 'galeria-admin'
     )
   ));
