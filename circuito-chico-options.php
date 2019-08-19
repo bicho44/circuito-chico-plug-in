@@ -82,20 +82,7 @@ function circuito_post_type($post_types)
         ,'rewrite' => array(
             'slug' => __('activity', 'imgd')
         )
-        /*,'status' => array(
-          'draft' => array(
-              'label' => __('draft', LANG),
-              'public' => false
-              ),
-          'pending' => array(
-              'label' => __('pending', LANG),
-              'public' => false
-              ),
-          'publish' => array(
-            'label' => __('publish', LANG),
-            'public' => true
-        )
-      )*/
+        
     ,'supports' => array(
             'title',
             'editor',
@@ -133,31 +120,31 @@ add_filter('piklist_taxonomies', 'show_categoria');
 function show_categoria($taxonomies)
 {
   $labelUbica = array(
-    'name'                          => __( 'Ubicaciones', 'imgd' ),
-    'singular_name'                 => __( 'Ubicación', 'imgd' ),
-    'search_items'                  => __( 'Buscar la Ubicación', 'imgd' ),
-    'popular_items'                 => __( 'Ubicaciones Populares', 'imgd' ),
-    'all_items'                     => __( 'Todas las Ubicaciones', 'imgd' ),
-    'parent_item'                   => __( 'Ubicación pariente', 'imgd' ),
-    'edit_item'                     => __( 'Editar Ubicación', 'imgd' ),
-    'update_item'                   => __( 'Actualizar Ubicación', 'imgd' ),
-    'add_new_item'                  => __( 'Agregar una nueva Ubicación', 'imgd' ),
-    'new_item_name'                 => __( 'Nueva Ubicación', 'imgd' ),
-    'separate_items_with_commas'    => __( 'Separe las Ubicaciones con comas', 'imgd' ),
-    'add_or_remove_items'           => __( 'Agregue o Borre Ubicaciones', 'imgd' ),
-    'choose_from_most_used'         => __( 'Elija alguna ubicación entre las más usadas', 'imgd' )
+    'name'                          => __( 'Categor&iacute;as', 'imgd' ),
+    'singular_name'                 => __( 'Categor&iacute;as', 'imgd' ),
+    'search_items'                  => __( 'Buscar la Categor&iacute;a', 'imgd' ),
+    'popular_items'                 => __( 'Categor&iacute;as Populares', 'imgd' ),
+    'all_items'                     => __( 'Todas las Categor&iacute;as', 'imgd' ),
+    'parent_item'                   => __( 'Categor&iacute;as pariente', 'imgd' ),
+    'edit_item'                     => __( 'Editar Categor&iacute;a', 'imgd' ),
+    'update_item'                   => __( 'Actualizar Categor&iacute;a', 'imgd' ),
+    'add_new_item'                  => __( 'Agregar una nueva Categor&iacute;a', 'imgd' ),
+    'new_item_name'                 => __( 'Nueva Categor&iacute;a', 'imgd' ),
+    'separate_items_with_commas'    => __( 'Separe las Categor&iacute;as con comas', 'imgd' ),
+    'add_or_remove_items'           => __( 'Agregue o Borre Categor&iacute;as', 'imgd' ),
+    'choose_from_most_used'         => __( 'Elija alguna Categor&iacute;a entre las más usadas', 'imgd' )
 );
     $taxonomies[] = array(
-        'post_type' => array('imgd_programa', 'post', 'page')
-        ,'name' => 'imgd_programa_ubicacion'
+        'post_type' => array('imgd_actividad')
+        ,'name' => 'imgd_categoria_admin'
         ,'show_admin_column' => true
         ,'configuration' => array(
-            'hierarchical' => true
+            'hierarchical' => false
             ,'labels' => $labelUbica
             ,'show_ui' => true
             ,'query_var' => true
             ,'rewrite' => array(
-                    'slug' => __('ubicacion', 'imgd')
+                    'slug' => __('categoria', 'imgd')
                 )
             )
     );
