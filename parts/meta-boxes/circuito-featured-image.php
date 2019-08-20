@@ -8,6 +8,8 @@ Context: side
 Collapse: false
 Tab: All
 Flow: Demo Workflow
+Author: Federico Reinoso
+Author email: admin@imgdigital.com.ar
 */
 ?>
 

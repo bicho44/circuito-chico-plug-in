@@ -1,7 +1,7 @@
 <?php
 /*
 Title: Home Page Settings
-Setting: opciones_imgd
+Setting: xopciones_imgd
 Order: 10
 Tab: Home
 Flow: IMGD Settings
