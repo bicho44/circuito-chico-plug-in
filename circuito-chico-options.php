@@ -3,7 +3,7 @@
 Plugin Name: Circuito Chico Options
 Plugin URI: http://imgdigital.com.ar/circuito-chico_options
 Description: Opciones para el sitio de Circuito Chico, basado en las opciones de IMG
-Version: 1.0
+Version: 1.0.1
 Author: Federico Reinoso
 Author URI: http://imgdigital.com.ar
 Text Domain: imgd
