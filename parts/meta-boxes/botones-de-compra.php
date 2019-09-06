@@ -3,8 +3,12 @@
 Title: Link de Compra
 Post Type: imgd_actividad
 Description: Campo para el link de compra
-Priority: side
-Order: 2
+
+Order: 30
+Priority: default
+Context: side
+Collapse: false
+
 Author: Federico Reinoso
 Author email: admin@imgdigital.com.ar
 */
