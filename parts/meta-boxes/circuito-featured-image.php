@@ -14,7 +14,7 @@ Author email: admin@imgdigital.com.ar
 ?>
 
 <?php
-  
+
   piklist('field', array(
     'type' => 'file'
     ,'field' => '_thumbnail_id' // Use this field to match WordPress featured image field name.
@@ -67,7 +67,7 @@ jQuery(document).ready(function( $ ) {
 
   piklist('field', array(
     'type' => 'file'
-    ,'field' => 'img_galeria_id'
+    ,'field' => 'imgd_galeria'
     ,'scope' => 'post_meta'
     ,'options' => array(
       'title' => __('Galer&iacute; de Im&aacute;genes', 'imgd')
