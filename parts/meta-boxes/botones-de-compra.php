@@ -20,6 +20,12 @@ Author email: admin@imgdigital.com.ar
 // ));
 
 piklist('field', array(
+  'type' => 'number',
+  'field' => 'imgd_price_actividad',
+  'label' => __('Precio de la Actividad', 'imgd'),
+));
+
+piklist('field', array(
   'type' => 'text',
   'field' => 'imgd_texto_link_compra_field',
   'label' => __('Texto a mostrar en el botón para acceder al link', 'imgd'),

@@ -93,6 +93,7 @@ foreach ($registered_post_types as $post_type => $value)
   ));
 
 
+
 /*piklist('field', array(
     'type' => 'group'
 ,'field' => 'insta_group'
