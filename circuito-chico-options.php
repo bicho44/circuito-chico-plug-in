@@ -634,15 +634,15 @@ function imgd_actual_season($imgd_season_dates)
     $today = time();
 
     //var_dump($today);
-    if ($today >= strtotime($imgd_season_dates['media']) && $today < strtotime($imgd_season_dates['alta'])) {
+    if (strtotime($imgd_season_dates['media']) >= $today  && $today < strtotime($imgd_season_dates['alta'])) {
         $actual_season = "media";
     }
 
-    if ($today >= strtotime($imgd_season_dates['alta']) && $today < strtotime($imgd_season_dates['baja'])) {
+    if (strtotime($imgd_season_dates['alta']) >= $today && $today < strtotime($imgd_season_dates['baja'])) {
         $actual_season = "alta";
     }
 
-    if ($today >= strtotime($imgd_season_dates['baja']) && $today < strtotime($imgd_season_dates['media'])) {
+    if (strtotime($imgd_season_dates['baja']) >= $today  && $today < strtotime($imgd_season_dates['media'])) {
         $actual_season = "baja";
     }
 
