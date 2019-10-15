@@ -4,10 +4,11 @@ Title: Home Page Settings
 Setting: opciones_imgd
 Order: 10
 Tab: Home
-Flow: IMGD Settings
+Flow: Settings
+Default: true
 */
 
-piklist (
+piklist(
     'field',
     array(
         'type' => 'radio',
@@ -26,17 +27,17 @@ piklist (
     )
 );
 
-$sliders=array();
-$sliders['boo']=__('Carousel Bootstrap','imgd');
+$sliders = array();
+$sliders['boo'] = __('Carousel Bootstrap', 'imgd');
 
-if(function_exists('revslider')) {
-  $sliders['rev']=__('Revolution Slider','imgd');
+if (function_exists('revslider')) {
+    $sliders['rev'] = __('Revolution Slider', 'imgd');
 }
-if(function_exists('owlslider')) {
-  $sliders['owl']=__('Owl Slider','imgd');
+if (function_exists('owlslider')) {
+    $sliders['owl'] = __('Owl Slider', 'imgd');
 }
 
-piklist (
+piklist(
     'field',
     array(
         'type' => 'radio',
@@ -46,51 +47,39 @@ piklist (
         'value' => 'boo',
         'attributes' => array(
             'class' => 'radio'
-        )
-        , 'choices' => $sliders
-        , 'position' => 'wrap'
-        , 'conditions' => array(
-                array(
-                    'field' => 'imgd_slider'
-                    , 'value' => 1
-                )
+        ), 'choices' => $sliders, 'position' => 'wrap', 'conditions' => array(
+            array(
+                'field' => 'imgd_slider', 'value' => 1
             )
+        )
     )
 );
 
 $thumbnail_post_types = array();
 
 $registered_post_types = piklist(
-   get_post_types(
-     array()
-     ,'objects'
-   )
-   ,array(
-     'name'
-     ,'label'
-   )
-  );
+    get_post_types(
+        array(),
+        'objects'
+    ),
+    array(
+        'name', 'label'
+    )
+);
 
-foreach ($registered_post_types as $post_type => $value)
-{
-  if(post_type_supports($post_type, 'thumbnail'))
-  {
-    $thumbnail_post_types[$post_type] = $value;
-  }
+foreach ($registered_post_types as $post_type => $value) {
+    if (post_type_supports($post_type, 'thumbnail')) {
+        $thumbnail_post_types[$post_type] = $value;
+    }
 }
 
-  piklist('field', array(
-    'type' => 'checkbox'
-    ,'field' => 'imgd_slider_post'
-    ,'label' => 'Post Type Disponibles'
-    ,'choices' => $thumbnail_post_types
-    , 'conditions' => array(
-            array(
-                'field' => 'imgd_slider'
-                , 'value' => 1
-            )
+piklist('field', array(
+    'type' => 'checkbox', 'field' => 'imgd_slider_post', 'label' => 'Post Type Disponibles', 'choices' => $thumbnail_post_types, 'conditions' => array(
+        array(
+            'field' => 'imgd_slider', 'value' => 1
         )
-  ));
+    )
+));
 
 
 
@@ -135,7 +124,7 @@ foreach ($registered_post_types as $post_type => $value)
 
 /* Noticias Destacadas */
 
-piklist (
+piklist(
     'field',
     array(
         'type' => 'radio',
@@ -157,21 +146,13 @@ piklist (
 piklist(
     'field',
     array(
-        'type' => 'select'
-        ,'field' => 'imgd_desta_cant'
-        ,'description' => __('Cuantas Noticias Destacadas', 'imgd')
-        ,'value' => '6'
-        ,'label' => __('Cantidad', 'imgd')
-        , 'conditions' => array(
-                    array(
-                        'field' => 'imgd_destaca'
-                        , 'value' => 1
-                    )
-                )
-        ,'attributes' => array(
-                'class' => 'small-text'
-        )
-        , 'choices' => array(
+        'type' => 'select', 'field' => 'imgd_desta_cant', 'description' => __('Cuantas Noticias Destacadas', 'imgd'), 'value' => '6', 'label' => __('Cantidad', 'imgd'), 'conditions' => array(
+            array(
+                'field' => 'imgd_destaca', 'value' => 1
+            )
+        ), 'attributes' => array(
+            'class' => 'small-text'
+        ), 'choices' => array(
             2 => 2,
             3 => 3,
             4 => 4,
@@ -180,52 +161,7 @@ piklist(
     )
 );
 
-/* Línea de Actividades */
-piklist (
-    'field',
-    array(
-        'type' => 'radio',
-        'scope' => 'post_meta',
-        'field' => 'imgd_actividades',
-        'label' => __('Mostar Línea de actividades en la Home Page', 'imgd'),
-        'value' => 0,
-        'attributes' => array(
-            'class' => 'radio'
-        ),
-        'choices' => array(
-            0 => __('No', 'imgd'),
-            1 => __('Si', 'imgd')
-        ),
-        'position' => 'wrap'
-    )
-);
 
-piklist(
-    'field',
-    array(
-        'type' => 'select'
-        ,'field' => 'imgd_actividades_cant'
-        ,'description' => __('Cuantas Actividades Mostrar', 'imgd')
-        ,'value' => '6'
-        ,'label' => __('Cantidad', 'imgd')
-        , 'conditions' => array(
-                    array(
-                        'field' => 'imgd_actividades'
-                        , 'value' => 1
-                    )
-                )
-        ,'attributes' => array(
-                'class' => 'small-text'
-        )
-        , 'choices' => array(
-            2 => 2,
-            3 => 3,
-            4 => 4,
-            6 => 6,
-            0 => 'Todas'
-        )
-    )
-);
 
 /*
 piklist (
@@ -248,39 +184,6 @@ piklist (
 );
 */
 
-piklist (
-    'field',
-    array(
-        'type' => 'radio',
-        'scope' => 'post_meta',
-        'field' => 'imgd_goto_top',
-        'label' => __('Muestra el GotoTop?', 'imgd'),
-        'value' => 0,
-        'attributes' => array(
-            'class' => 'radio'
-        ),
-        'choices' => array(
-            0 => __('No', 'imgd'),
-            1 => __('Si', 'imgd')
-        ),
-        'position' => 'wrap'
-    )
-);
-
-piklist('field', array(
-    'type' => 'file'
-    ,'field' => 'imgd_image_to_top'
-    ,'label' => __('Imagen del Goto top', 'imgd')
-    ,'options' => array(
-      'basic' => true
-    )
-    , 'conditions' => array(
-                    array(
-                        'field' => 'imgd_goto_top'
-                        , 'value' => 1
-                    )
-                )
-  ));
 
 /*
 * @todo: Image Field
