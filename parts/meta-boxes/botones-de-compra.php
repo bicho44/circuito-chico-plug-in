@@ -1,7 +1,7 @@
 <?php
 /*
 Title: Link de Compra
-Post Type: imgd_actividad
+Post Type: ximgd_actividad
 Description: Campo para el link de compra
 
 Order: 30
@@ -19,11 +19,11 @@ Author email: admin@imgdigital.com.ar
 //     'label' => __('Datos a tener en cuenta en esta excursi&oacute;n', 'imgd')
 // ));
 
-piklist('field', array(
-  'type' => 'number',
-  'field' => 'imgd_price_actividad',
-  'label' => __('Precio de la Actividad', 'imgd'),
-));
+// piklist('field', array(
+//   'type' => 'number',
+//   'field' => 'imgd_price_actividad',
+//   'label' => __('Precio de la Actividad', 'imgd'),
+// ));
 
 piklist('field', array(
   'type' => 'text',
@@ -32,7 +32,7 @@ piklist('field', array(
 ));
 
 piklist('field', array(
-    'type' => 'text',
-    'field' => 'imgd_link_compra_field',
-    'label' => __('Link de Compra y / o Mercado Pago', 'imgd'),
- ));
+  'type' => 'text',
+  'field' => 'imgd_link_compra_field',
+  'label' => __('Link de Compra y / o Mercado Pago', 'imgd'),
+));
