@@ -634,7 +634,7 @@ function imgd_actual_season($imgd_season_dates)
     $today = time();
 
     //var_dump($today);
-    if (strtotime($imgd_season_dates['alta']) < $today) {
+    if ($today < strtotime($imgd_season_dates['alta'])) {
         $actual_season = "media";
     }
 
